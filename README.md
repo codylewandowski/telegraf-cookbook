@@ -11,7 +11,7 @@ cookbook.  ie. `[netstat]` requires `lsof`
 
 * CentOS 6.8 and 7.3
 * Ubuntu 15.04 and 16.04
-* Amazon Linux 
+* Amazon Linux
 
 ## Requirements
 
@@ -31,7 +31,7 @@ as needed.  Alternatively, you can use the custom resources directly.
 | node['telegraf']['config']           | Hash   | Config variables to be written to the telegraf config | {'tags' => {},'agent' => {'interval' => '10s','round_interval' => true,'flush_interval' => '10s','flush_jitter' => '5s'}                                            |
 | node['telegraf']['outputs']          | Array  | telegraf outputs                                      | ['influxdb' => {'urls' => ['http://localhost:8086'],'database' => 'telegraf','precision' => 's'}]                                                                   |
 | node['telegraf']['include_repository'] | [TrueClass, FalseClass] | Whether or not to pull in the InfluxDB repository to install from. | true |
-| node['telegraf']['inputs']           | Hash   | telegraf inputs                                       | {'cpu' => {'percpu' => true,'totalcpu' => true,'drop' => ['cpu_time'],},'disk' => {},'io' => {},'mem' => {},'net' => {},'swap' => {},'system' => {}}                |
+| node['telegraf']['inputs']           | Hash   | telegraf inputs                                       | {'cpu' => {'percpu' => true,'totalcpu' => true,'drop' => ['cpu_time'],},'disk' => [{}],'io' => [{}],'mem' => [{}],'net' => [{}],'swap' => [{}],'system' => [{}]}                |
 
 ### Custom Resources
 
